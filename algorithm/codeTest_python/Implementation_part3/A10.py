@@ -1,5 +1,4 @@
 def solution(key, lock):
-    answer = True
     rotate_count=0
     
     lock_length=len(lock)
@@ -7,31 +6,33 @@ def solution(key, lock):
 
     expand_lock_length=lock_length+2*key_length
     
-    # 옮기기
     expand_lock=[[0]*expand_lock_length for i in range(expand_lock_length)]
     for i in range(key_length,key_length+lock_length):
         for j in range(key_length,key_length+lock_length):
-            expand_lock[i][j]=lock[i-key_length,j-key_length]
-         
+            expand_lock[i][j]=lock[i-key_length][j-key_length]
+
     while rotate_count<4:
+        for i in range(key_length+lock_length):
+            for j in range(key_length+lock_length):
+                for k in range(key_length):
+                    for l in range(key_length):
+                        if key[k][l]==1:
+                            expand_lock[k+i][l+j]=1
+                # print(expand_lock)
+                # 자물쇠 부분 확인
+                count=1
+                for i in range(key_length,key_length+lock_length):
+                    for j in range(key_length,key_length+lock_length):
+                        if expand_lock[i][j]==1:
+                            count+=1
         
-        
-        # 자물쇠 부분 확인
-        count=0
-        for i in range(key_length,key_length+lock_length):
-            for j in range(key_length,key_length+lock_length):
-                if expand_lock[i][j]==1:
-                    count+=1
-        if count==lock_length*lock_length:
-            answer=True
-            break
-        else:
-            answer=False
+                if count==lock_length*lock_length:
+                    return True
             
-        key = array_rotate(key)
+        key = array_rotate(key,True)
         rotate_count+=1
     
-    return answer
+    return False
 
 def array_rotate(array,direction):
     height=len(array)
@@ -49,3 +50,12 @@ def array_rotate(array,direction):
                 array_complete[height-j-1][i]=array[i][j]
 
     return array_complete
+
+key=[[0]*3 for i in range(3)]
+key[1][0]=1
+key[2][1]=1
+key[2][2]=1
+lock=[[1]*3 for i in range(3)]
+lock[1][2]=0
+lock[2][1]=0
+print(solution(key,lock))
