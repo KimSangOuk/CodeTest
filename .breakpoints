@@ -1,5 +1,13 @@
 {
   "files": {
+    ".replit": [
+      {
+        "id": "4bf4a3f7-0627-4009-83f4-00952f8eb338",
+        "line": 2,
+        "version": 2,
+        "index": 21
+      }
+    ],
     "algorithm/Programmers/2020 KAKAO BLIND RECRUITMENT/기둥과 보 설치.py": [
       {
         "id": "edfe4b56-248f-4943-8d04-98a853e6127c",
