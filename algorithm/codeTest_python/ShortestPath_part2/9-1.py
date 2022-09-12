@@ -27,7 +27,7 @@ def get_smallest_node():
     if distance[i]<min_value and not visited[i]:
       min_value = distance[i]
       index=i
-  return index
+  return index 
 
 def dijkstra(start):
   # 시작 노드에 대해서 초기화
