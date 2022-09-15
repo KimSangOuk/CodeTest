@@ -6,6 +6,8 @@ INF=int(1e9) # 무한을 의미하는 값으로 10억을 설정
 dx = [-1,0,1,0]
 dy = [0,1,0,-1]
 
+problem_num=1
+
 # 전체 테스트 케이스(Test Case)만큼 반복
 while True:
   # 노드의 개수를 입력받기
@@ -44,4 +46,5 @@ while True:
         distance[nx][ny]=cost
         heapq.heappush(q,(cost,nx,ny))
 
-  print(distance[n-1][n-1])
+  print("Problem "+str(problem_num)+": "+str(distance[n-1][n-1]))
+  problem_num+=1
