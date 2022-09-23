@@ -12,6 +12,7 @@
 # 풀이시간 : 적정
 
 import sys
+
 input=sys.stdin.readline
 sys.setrecursionlimit(100000)
 
