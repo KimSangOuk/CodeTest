@@ -4,8 +4,8 @@ input=sys.stdin.readline
 s=input()
 start=s[0]
 now=start
-result=0
-for i in s[1:len(s)-1]:
+result=0  
+for i in s[1:len(s)-1]: 
   if now!=i:
     result+=1
     now=i

@@ -3,9 +3,9 @@
     ".replit": [
       {
         "id": "4bf4a3f7-0627-4009-83f4-00952f8eb338",
-        "line": 2,
-        "version": 2,
-        "index": 21
+        "line": 1,
+        "version": 4,
+        "index": 0
       }
     ],
     "algorithm/Backjoon/DFS-BFS/1012.py": [
